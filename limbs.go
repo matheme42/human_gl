@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/go-gl/gl/v4.1-core/gl"
+	"github.com/go-gl/mathgl/mgl32"
 )
 
 // makeVao initializes and returns a vertex array from the points provided.
@@ -42,6 +43,8 @@ func createLimb(x float32, y float32, z float32) uint32 {
 			0, y, z,
 		}
 	)
+
+	mgl32.Perspective(80, 16/9, 0.4, 100)
 
 	var vbo uint32
 	gl.GenBuffers(1, &vbo)
